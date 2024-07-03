@@ -1,66 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda Digital</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" type="text/css" href="src/style/style.css" />
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Rammetto+One"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="src/style/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
     <script src="src/script/script.js" defer></script>
-  </head>
-  <body>
-    <div >
-      <div class="container">
-        <h1>
-          <i class="fas fa-calendar-alt"></i> Agenda Digital
-        </h1>
-        <p class="lead">
-          <i class="fas fa-tasks"></i> A simple agenda for your tasks...
-        </p>
-      </div>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+       <div class="container">
+         <h1 class="display-3" style="font-family: 'Rammetto One', cursive;">Agenda Digital</h1>
+         <p class="lead" style="font-family: 'Rammetto One', cursive;">This is a simple agenda for your tasks...</p>
+       </div> 
     </div>
-
+    
     <div class="container">
-      <div>
-        <div>
-          <div>
-            <h3><i class="fas fa-plus-circle"></i> New Reminder</h3>
+       <div class="row">
+         <div class="col-md-6">
+           <div id="titular-new-reminder">
+             <h3><i class="fa fa-plus-square" aria-hidden="true"></i> New reminder</h3>
+           </div> 
+           <br>
+           <div class="form-group text-center">
+            <textarea class="form-control" rows="3" id="texto" placeholder="Enter your reminder..."></textarea>
+            <br>
+            <input type="date" class="form-control" id="date">
+            <br>
+            <select class="form-control" id="type">
+              <option value="personal">Personal</option>
+              <option value="worked">Worked</option>
+              <option value="other">Other</option>
+            </select>
+            <br>
+            <button type="button" class="btn btn-success form-control" id="buttomSave"><i class="fa fa-save" aria-hidden="true"></i> Save</button>
           </div>
-          <div >
-            <textarea              
-              rows="3"
-              id="texto"
-              placeholder="Enter your reminder..."
-            ></textarea>
-            <br />
-            <input type="date" id="date" />
-            <br />
-            <button type="button"  id="buttomSave">
-              <i class="fas fa-save"></i> Save
-            </button>
-          </div>
-          <div id="error"></div>
-        </div>
-        <div >
-          <div >
-            <h3><i class="fas fa-bell"></i> Reminders</h3>
-          </div>
-          <ul ></ul>
-        </div>
-      </div>
+           <div id="error"></div>
+         </div>
+         <div class="col-md-6">
+           <div class="titular-tarefas">
+             <h3><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Reminders</h3>
+             <ul id="reminderList" class="list-group">
+             </ul>
+           </div>
+         </div>
+       </div>
     </div>
-  </body>
-</html>
